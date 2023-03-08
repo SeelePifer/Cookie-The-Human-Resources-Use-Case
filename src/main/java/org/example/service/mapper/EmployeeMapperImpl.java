@@ -9,21 +9,12 @@ import java.util.ArrayList;
 
 public class EmployeeMapperImpl implements EmployeeMapper{
     public Employee newEmployeeToDomain(NewEmployee newEmployee) {
-        Employee employee = new Employee();
-        employee.setName(newEmployee.getName());
-        employee.setLastName(newEmployee.getLastName());
-        if (newEmployee.getDepartments() !=null && !newEmployee.getDepartments().isEmpty()){
-            Department department = newEmployee.getDepartments().get(0);
-            employee.setDepartment(department);
-        }
+        Employee employee = new Employee(0, newEmployee.getName(), newEmployee.getLastName(), newEmployee.getDepartments());
         return employee;
     }
 
     public FetchedEmployee fromDomain(Employee employee) {
-        FetchedEmployee fetchedEmployee = new FetchedEmployee();
-        ArrayList<String> names = new ArrayList<String>();
-        names.add(employee.getName() + " "+ employee.getLastName());
-        fetchedEmployee.setNames(names);
+        FetchedEmployee fetchedEmployee = new FetchedEmployee(new StringBuilder(employee.getName()).append(employee.getLastName()).toString());
         return fetchedEmployee;
     }
 }

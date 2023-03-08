@@ -1,17 +1,14 @@
 package org.example.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Employee{
-    private int id;
-    private String name;
-    private String lastName;
-    private Department department;
+    private final  int id;
+    private final String name;
+    private final String lastName;
+    private final List<Department> department;
 }

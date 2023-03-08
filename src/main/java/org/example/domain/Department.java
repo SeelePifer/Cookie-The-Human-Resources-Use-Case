@@ -1,16 +1,11 @@
 package org.example.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Department {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
 
 }
