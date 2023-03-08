@@ -1,17 +1,12 @@
 package org.example.service.department;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class FetchedEmployee {
-    private List<String> names;
+    private final String names;
 
 }

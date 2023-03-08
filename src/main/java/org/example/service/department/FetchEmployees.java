@@ -1,13 +1,15 @@
 package org.example.service.department;
 
+import lombok.RequiredArgsConstructor;
 import org.example.application.department.QueryDepartmentUseCase;
-import org.example.service.mapper.EmployeeMapper;
 
+import java.util.List;
+
+@RequiredArgsConstructor
 public class FetchEmployees implements QueryDepartmentUseCase {
-    private EmployeeMapper employeeMapper;
-    private ReadDepartmentOutputPort readDepartmentOutputPort;
+    private final ReadDepartmentOutputPort readDepartmentOutputPort;
 
-    public void fetchAllEmployeesByDepartment() {
-
+    public List<FetchedEmployee> fetchAllEmployeesByDepartment(int departmentId) {
+        return readDepartmentOutputPort.fetchEmployeesByDepartament(departmentId);
     }
 }

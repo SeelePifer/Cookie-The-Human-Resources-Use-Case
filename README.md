@@ -6,3 +6,6 @@
   2. What departments the Employee is part of?
 
   3. Fetch Employees by Department.
+
+## Requirements 
+- java 11
